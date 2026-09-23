@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stop Guêpes &amp; Frelons — Destruction de nids à Paris et île-de-France</title>
+<meta name="description" content="Destruction de nids de guêpes et frelons pour particuliers, entreprises et collectivités sur Paris et l'île-de-France. Intervention rapide et sécurisée.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #B45309;
+    --secondary: #F59E0B;
+    --light: #F8FAFC;
+    --dark: #0F172A;
+    --text: #1E293B;
+    --on-primary: #F8FAFC;
+    --on-secondary: #0F172A;
+    --on-light: #0F172A;
+    --on-dark: #F8FAFC;
+    --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { font-family: var(--font); color: var(--text); background: var(--light); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; }
+  .wrap { max-width: 1152px; margin: 0 auto; padding: 0 24px; }
+  .surface-light { background: var(--light); color: var(--on-light); }
+  .surface-dark  { background: var(--dark);  color: var(--on-dark); }
+  .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; font: 700 .875rem var(--font); cursor: pointer; border: 1px solid transparent; transition: opacity .2s; }
+  .btn:hover { opacity: .88; }
+  .btn-primary { background: var(--primary); color: var(--on-primary); }
+  .btn-outline { border-color: rgba(15,23,42,.3); color: var(--on-light); background: transparent; }
+  .btn-sec { background: var(--secondary); color: var(--on-secondary); }
+  .btn-ghost { border-color: rgba(248,250,252,.35); color: var(--on-dark); }
+
+  header.site { position: sticky; top: 0; z-index: 30; background: rgba(248,250,252,.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(15,23,42,.1); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; max-width: 1280px; }
+  .brand { font-weight: 800; font-size: 1.125rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  nav.main { display: none; gap: 32px; }
+  nav.main a { font-size: .875rem; color: rgba(30,41,59,.65); transition: opacity .2s; }
+  nav.main a:hover { opacity: .6; }
+  header .btn { padding: 10px 20px; font-weight: 600; }
+  @media (min-width: 768px) { nav.main { display: flex; } }
+  @media (max-width: 420px) { header .btn span.num { display: none; } }
+
+  .hero { overflow: hidden; }
+  .hero-grid { display: grid; max-width: 1440px; margin: 0 auto; min-height: 74vh; }
+  .hero-text { display: flex; align-items: center; padding: 80px 24px; }
+  .hero h1 { margin-top: 20px; font-size: clamp(2.1rem, 5.5vw, 4rem); font-weight: 800; line-height: 1.04; overflow-wrap: anywhere; }
+  .hero .lead { margin-top: 24px; max-width: 36rem; font-size: 1.05rem; line-height: 1.65; opacity: .8; }
+  .hero .actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .rating-line { margin-top: 28px; display: flex; align-items: center; gap: 8px; font-size: .875rem; }
+  .rating-line svg { color: var(--secondary); }
+  .rating-line .muted { opacity: .7; }
+  .hero-img { position: relative; min-height: 320px; background: linear-gradient(135deg, var(--secondary), var(--primary)); }
+  .hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  @media (min-width: 768px) {
+    .hero-grid { grid-template-columns: .82fr 1.18fr; }
+    .hero-text { padding: 80px 48px; }
+  }
+  @media (min-width: 1024px) { .hero-text { padding: 80px 80px; } }
+
+  .about { padding: 96px 0; }
+  .about-grid { display: grid; gap: 40px; }
+  .about h2 { font-size: clamp(1.875rem, 4vw, 2.25rem); font-weight: 800; }
+  .about .body { max-width: 42rem; font-size: 1.125rem; line-height: 1.7; }
+  .about .body p { opacity: .7; margin-bottom: 20px; }
+  .checks { display: grid; gap: 12px; padding-top: 16px; }
+  .checks li { display: flex; align-items: center; gap: 12px; border-top: 1px solid rgba(248,250,252,.15); padding: 16px 0; font-size: .875rem; font-weight: 600; }
+  .checks svg { flex-shrink: 0; }
+  @media (min-width: 640px) { .checks { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) { .about-grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+
+  .gallery { padding: 96px 0; }
+  .gallery h2, .reviews-sec h2, .rappel-head h2, .contact-head h2 { margin-top: 12px; font-size: clamp(2rem, 5vw, 2.25rem); font-weight: 800; }
+  .gallery-grid { margin-top: 40px; display: grid; gap: 16px; }
+  .shot { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: linear-gradient(135deg, rgba(245,158,11,.35), rgba(180,83,9,.35)); }
+  .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .reviews-sec { padding: 96px 0; background: #fff; color: var(--on-light); }
+  .score { margin-top: 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .score .big { font-size: 1.875rem; font-weight: 800; }
+  .stars { display: inline-flex; gap: 2px; color: var(--secondary); }
+  .score .muted { opacity: .65; font-size: .9rem; }
+  .reviews-note { margin-top: 24px; opacity: .6; font-size: .9rem; max-width: 32rem; }
+
+  .rappel { padding: 96px 0; }
+  .rappel .wrap { max-width: 720px; }
+  .rappel-head p.sub { margin-top: 12px; opacity: .75; }
+  .contact-head p.sub { margin-top: 12px; opacity: .75; }
+  form { margin-top: 32px; display: grid; gap: 18px; }
+  label span { display: block; margin-bottom: 6px; font-size: .85rem; font-weight: 600; }
+  label span .opt { font-weight: 400; opacity: .6; }
+  input, textarea { width: 100%; padding: 12px 14px; font: 400 1rem var(--font); color: var(--text); background: #fff; border: 1px solid rgba(15,23,42,.25); border-radius: 0; }
+  input:focus, textarea:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+  fieldset { border: 0; }
+  fieldset legend { font-size: .85rem; font-weight: 600; margin-bottom: 10px; padding: 0; }
+  .time-choices { display: flex; flex-wrap: wrap; gap: 10px; }
+  .time-choices button { padding: 10px 18px; font: 600 .85rem var(--font); background: transparent; border: 1px solid rgba(15,23,42,.25); color: var(--text); cursor: pointer; transition: .2s; }
+  .time-choices button[aria-pressed="true"] { background: var(--secondary); border-color: var(--secondary); color: var(--on-secondary); }
+  .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+  #rappel-status, #contact-status { font-size: .9rem; font-weight: 600; min-height: 1.2em; }
+
+  .contact { background: var(--dark); color: var(--on-dark); }
+  .contact-grid { display: grid; }
+  .contact-info { padding: 80px 24px; }
+  .contact-info h2 { margin-top: 12px; font-size: clamp(2rem, 5vw, 2.25rem); font-weight: 800; }
+  .contact-info .sub { margin-top: 16px; max-width: 32rem; opacity: .75; }
+  .contact-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .info-block { margin-top: 32px; display: grid; gap: 24px; }
+  .info-block .row { display: flex; align-items: flex-start; gap: 12px; }
+  .info-block strong { display: block; }
+  .info-block p { opacity: .7; font-size: .9rem; }
+  .hours { font-size: .9rem; max-width: 320px; }
+  .hours li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(248,250,252,.12); }
+  .map { min-height: 340px; }
+  .map iframe { width: 100%; height: 100%; min-height: 340px; border: 0; display: block; }
+  @media (min-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .contact-info { padding: 80px 48px; }
+  }
+
+  footer.site { background: #080d1a; color: var(--on-dark); padding: 40px 0 24px; font-size: .875rem; }
+  footer .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
+  footer .name { font-weight: 800; font-size: 1rem; }
+  footer .tag { opacity: .65; margin-top: 4px; }
+  footer .links { display: grid; gap: 6px; opacity: .8; }
+  footer .links a:hover { text-decoration: underline; }
+  footer .bottom { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(248,250,252,.12); opacity: .6; font-size: .8rem; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <span class="brand">Guêpes &amp; Frelons</span>
+    <nav class="main" aria-label="Navigation principale">
+      <a href="#a-propos">À propos</a>
+      <a href="#realisations">Galerie</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:0184165254" class="btn btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg><span class="num">01 84 16 52 54</span></a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero surface-light">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div>
+          <p class="eyebrow">Intervention rapide et sécurisée</p>
+          <h1>Destruction de nids de guêpes et frelons</h1>
+          <p class="lead">Spécialiste de la neutralisation des guêpes, frelons asiatiques et européens pour les particuliers, entreprises et collectivités.</p>
+          <div class="actions">
+            <a href="tel:0184165254" class="btn btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Nous contacter</a>
+            <a href="#contact" class="btn btn-outline"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Nous trouver</a>
+          </div>
+          <p class="rating-line"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><strong>4,9</strong><span class="muted">sur Google · 70 avis</span></p>
+        </div>
+      </div>
+      <div class="hero-img">
+        <!-- ▼ REMPLACEZ l'URL ci-dessous par l'adresse de votre image principale (hero.png) -->
+        <img src="URL_IMAGE_HERO" alt="Service d'extermination des nuisibles à île-de-France" width="1600" height="1000" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="a-propos" class="about surface-dark">
+    <div class="wrap">
+      <div class="about-grid">
+        <h2>Expertise locale et engagement sécuritaire</h2>
+        <div class="body">
+          <p>Implanté à Paris et en région parisienne, Guêpes et Frelons assure la destruction des nids de guêpes et de frelons dans le respect des règles de sécurité les plus strictes. Membre d'un réseau de professionnels qualifiés, l'entreprise allie réactivité et approche écoresponsable grâce à sa collaboration avec des apiculteurs pour préserver les abeilles.</p>
+          <p>Stop Guêpes &amp; Frelons — INTERVENTION, sur Paris et sa région - île-de-France.</p>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Intervention rapide et hautement sécurisée</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Élimination des frelons asiatiques et européens</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Collaboration étroite avec des apiculteurs</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section id="realisations" class="gallery surface-light">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--primary)">Galerie</p>
+      <h2>Découvrez nos réalisations</h2>
+      <div class="gallery-grid">
+        <!-- ▼ REMPLACEZ les URL ci-dessous par vos 3 photos (photo-1.jpg, photo-2.jpg, photo-3.jpg) -->
+        <div class="shot"><img src="URL_PHOTO_1" alt="Réalisation" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="shot"><img src="URL_PHOTO_2" alt="Réalisation" loading="lazy" onerror="this.style.display='none'"></div>
+        <div class="shot"><img src="URL_PHOTO_3" alt="Réalisation" loading="lazy" onerror="this.style.display='none'"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section id="avis" class="reviews-sec">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--primary)">Avis clients</p>
+      <h2>Ce que disent nos clients</h2>
+      <div class="score">
+        <span class="big">4,9</span>
+        <span class="stars" aria-label="4,9 sur 5"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span>
+        <span class="muted">· 70 avis Google</span>
+      </div>
+      <p class="reviews-note">Le texte des avis individuels n'était pas présent dans le fichier fourni (ils se chargent dynamiquement sur le site d'origine). Vous pouvez les ajouter ici sous forme de cartes, ou intégrer directement le widget d'avis Google de votre choix.</p>
+    </div>
+  </section>
+
+  <!-- RAPPEL -->
+  <section id="rappel" class="rappel surface-light">
+    <div class="wrap">
+      <div class="rappel-head">
+        <p class="eyebrow" style="color:var(--secondary)">Rappel</p>
+        <h2>Être rappelé</h2>
+        <p class="sub">Laissez-nous votre numéro : nous vous rappelons au moment qui vous convient le mieux.</p>
+      </div>
+      <!-- ▼ REMPLACEZ l'action par votre point de réception (ex. Formspree : https://formspree.io/f/xxxxxxx) -->
+      <form id="rappel-form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+        <label><span>Nom</span><input type="text" name="name" maxlength="80" required autocomplete="name"></label>
+        <label><span>Téléphone</span><input type="tel" name="phone" maxlength="30" required autocomplete="tel"></label>
+        <fieldset>
+          <legend>Quand préférez-vous être rappelé ?</legend>
+          <div class="time-choices" role="group" aria-label="Créneau préféré">
+            <button type="button" aria-pressed="false" data-value="Matin">Matin</button>
+            <button type="button" aria-pressed="false" data-value="Après-midi">Après-midi</button>
+            <button type="button" aria-pressed="true" data-value="Peu importe">Peu importe</button>
+          </div>
+          <input type="hidden" name="creneau" value="Peu importe">
+        </fieldset>
+        <label><span>Votre demande en quelques mots <span class="opt">(facultatif)</span></span><textarea name="message" rows="2" maxlength="300"></textarea></label>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div><button type="submit" class="btn btn-primary">Demander à être rappelé</button></div>
+        <p id="rappel-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow" style="color:var(--secondary)">Contact</p>
+        <h2>Demandez une intervention</h2>
+        <p class="sub">Pour signaler un nid ou planifier une intervention urgente, prenez contact dès maintenant.</p>
+        <div class="contact-actions">
+          <a href="tel:0184165254" class="btn btn-sec"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>01 84 16 52 54</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Stop%20Gu%C3%AApes%20%26%20Frelons%2C%20INTERVENTION%2C%20sur%20Paris%20et%20%20sa%20r%C3%A9gion%20-%2C%20%C3%AEle-de-France%2C%20FR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Itinéraire</a>
+        </div>
+        <div class="info-block">
+          <div class="row"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <strong>INTERVENTION</strong>
+              <p>sur Paris et sa région - île-de-France</p>
+            </div>
+          </div>
+          <div class="row"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <ul class="hours" aria-label="Horaires d'ouverture"><li><span>Lundi</span><span>08:00 – 22:00</span></li><li><span>Mardi</span><span>08:00 – 22:00</span></li><li><span>Mercredi</span><span>08:00 – 22:00</span></li><li><span>Jeudi</span><span>08:00 – 22:00</span></li><li><span>Vendredi</span><span>08:00 – 22:00</span></li><li><span>Samedi</span><span>08:00 – 22:00</span></li><li><span>Dimanche</span><span>08:00 – 22:00</span></li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Carte — Stop Guêpes &amp; Frelons" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Stop Gu%C3%AApes%20%26%20Frelons%2C%20INTERVENTION%2C%20sur%20Paris%20et%20sa%20r%C3%A9gion%20-%2C%20%C3%AEle-de-France&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <p class="name">Stop Guêpes &amp; Frelons</p>
+        <p class="tag">Service d'extermination des nuisibles</p>
+      </div>
+      <div class="links">
+        <span>INTERVENTION</span>
+        <a href="tel:0184165254">01 84 16 52 54</a>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Stop Guêpes &amp; Frelons</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sélecteur de créneau (Matin / Après-midi / Peu importe)
+  (function () {
+    var group = document.querySelector('.time-choices');
+    var hidden = document.querySelector('input[name="creneau"]');
+    if (!group) return;
+    group.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        group.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        hidden.value = btn.dataset.value;
+      });
+    });
+  })();
+
+  // Envoi des formulaires sans quitter la page
+  function wireForm(formId, statusId) {
+    var form = document.getElementById(formId);
+    var status = document.getElementById(statusId);
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = 'Envoi en cours…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (r.ok) { form.reset(); status.textContent = 'Merci ! Votre demande a bien été envoyée.'; }
+          else { status.textContent = "Une erreur est survenue. Merci de nous appeler au 01 84 16 52 54."; }
+        })
+        .catch(function () { status.textContent = "Une erreur est survenue. Merci de nous appeler au 01 84 16 52 54."; });
+    });
+  }
+  wireForm('rappel-form', 'rappel-status');
+</script>
+</body>
+</html>
